@@ -1,0 +1,28 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "eCommerce application built with the MERN-stack",
+  "homepage": "https://github.com/joerylander/proshop#readme",
+  "bugs": {
+    "url": "https://github.com/joerylander/proshop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joerylander/proshop.git"
+  },
+  "license": "MIT",
+  "author": "Joe Rylander",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "start": "tsx server/server.ts"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.21.0"
+  }
+}
