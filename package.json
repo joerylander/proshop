@@ -15,7 +15,10 @@
   "type": "module",
   "main": "server.ts",
   "scripts": {
-    "start": "tsx server/server.ts"
+    "start": "node server/server.ts",
+    "server": "tsx server/server.ts",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "express": "^5.2.1"
@@ -23,6 +26,7 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "concurrently": "^9.2.1",
+    "dotenv": "^17.4.2",
     "tsx": "^4.21.0"
   }
 }
