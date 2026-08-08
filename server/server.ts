@@ -1,9 +1,13 @@
 import express from "express";
 import products from "./data/products.ts";
 import dotenv from "dotenv";
+import connectDB from "./config/db.js";
 dotenv.config();
 
 const port = process.env.PORT || 5001;
+
+connectDB();
+
 const app = express();
 const api = express.Router();
 
