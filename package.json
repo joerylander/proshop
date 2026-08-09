@@ -18,10 +18,13 @@
     "start": "node server/server.ts",
     "server": "tsx server/server.ts",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node server/seeder.ts",
+    "data:destroy": "node server/seeder.ts -d"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "colors": "^1.4.0",
     "express": "^5.2.1",
     "mongoose": "^9.9.1"
   },
