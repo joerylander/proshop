@@ -6,6 +6,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store.ts';
 import './assets/styles/index.css';
 import './assets/styles/bootstrap.custom.css';
 import App from './App.tsx';
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
 );
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 );
