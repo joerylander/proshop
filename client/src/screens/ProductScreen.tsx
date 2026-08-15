@@ -3,6 +3,8 @@ import { Button, Card, Col, Image, ListGroup, Row } from 'react-bootstrap';
 import Rating from '../components/Ratings';
 import { useGetProductDetailsQuery } from '../slices/productsApiSlice';
 import { getErrorMessage } from '../utils/getErrorMessage';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -23,9 +25,9 @@ const ProductScreen = () => {
       </Link>
 
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <div>{getErrorMessage(error)}</div>
+        <Message variant="danger">{getErrorMessage(error)}</Message>
       ) : (
         <Row>
           <Col md={5}>

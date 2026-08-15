@@ -3,6 +3,8 @@ import type { Product } from '../types';
 import ProductCard from '../components/ProductCard';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
 import { getErrorMessage } from '../utils/getErrorMessage';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 const HomeScreens = () => {
   const { data: products, isLoading, error } = useGetProductsQuery();
@@ -10,9 +12,9 @@ const HomeScreens = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <div className="">{getErrorMessage(error)}</div>
+        <Message variant="danger">{getErrorMessage(error)}</Message>
       ) : (
         <>
           <h1>Latest products</h1>
