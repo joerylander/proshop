@@ -10,3 +10,15 @@ export interface Product {
   rating: number;
   numReviews: number;
 }
+
+export interface CartItem extends Product {
+  qty: number;
+}
+
+export interface CartState {
+  cartItems: CartItem[];
+  itemsPrice?: string;
+  shippingPrice?: string;
+  taxPrice?: string;
+  totalPrice?: string;
+}
