@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -20,7 +20,6 @@ import { addToCart } from '../slices/cartSlice';
 const ProductScreen = () => {
   const { id: productId } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const {
     data: product,
     isLoading,
@@ -31,7 +30,6 @@ const ProductScreen = () => {
   const addToCartHandler = () => {
     if (!product) return;
     dispatch(addToCart({ ...product, qty }));
-    //navigate('/cart');
   };
 
   if (!product) {
